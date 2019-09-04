@@ -22,3 +22,17 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+if len(sys.argv) > 1:
+    month = int(sys.argv[1])
+else: month = datetime.now().month
+
+if len(sys.argv) > 2:
+    year = int(sys.argv[2])
+else: year = datetime.now().year
+
+if len(sys.argv) > 3:
+    print("Error: program only accepts two arguments, representing a month and a year")
+else:
+    c = calendar.TextCalendar(calendar.SUNDAY)
+    c.prmonth(year, month)
